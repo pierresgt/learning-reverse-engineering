@@ -19,15 +19,13 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-      - name: Install Visual Studio Build Tools
-        uses: borrrden/msbuild-tools-action@v2
+      - name: Setup MSBuild
+        uses: actions/setup-msbuild@v1
 
       - name: Run build-wrapper
         run: |
           cd Shellcode/
-          ls
           cl /EHsc /MD sclauncher.c /link /OUT:sclauncher.exe
-          ls
           
       - name: Run sonar-scanner
         env:
