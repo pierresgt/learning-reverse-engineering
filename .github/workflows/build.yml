@@ -21,7 +21,6 @@ jobs:
         run: |
           cd Shellcode/
           build-wrapper-win-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} gcc sclauncher.c
-          sclauncher.exe
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
