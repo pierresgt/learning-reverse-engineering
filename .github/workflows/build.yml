@@ -22,7 +22,6 @@ jobs:
           cd Shellcode/
           ls
           build-wrapper-win-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} 
-          cl /EHsc /MD sclauncher.c /OUT:sclauncher.exe
           ls
       - name: Run sonar-scanner
         env:
